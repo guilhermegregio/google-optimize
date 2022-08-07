@@ -1,0 +1,71 @@
+{
+  "name": "@gregio/google-optimize",
+  "version": "0.0.4-development",
+  "repository": "git@github.com:Creditas/person-classification-frontend-sdk.git",
+  "author": "Guilherme Mangabeira Gregio <guilherme.gregio@creditas.com.br>",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build",
+    "semantic-release": "semantic-release",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-types": "tsc -p tsconfig.prod.json ",
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests --colors",
+    "test:ci": "cross-env CI=1 yarn test --no-watch --ci --runInBand",
+    "test:coverage": "yarn test --coverage",
+    "test:watch": "yarn test --watch",
+    "prepare": "husky install"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/main.d.ts",
+  "typings": "dist/main.d.ts",
+  "main": "./dist/google-optimize.umd.js",
+  "module": "./dist/google-optimize.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/google-optimize.es.js",
+      "require": "./dist/google-optimize.umd.js"
+    }
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@swc/core": "^1.2.224",
+    "@swc/jest": "^0.2.22",
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.6.4",
+    "@types/ramda": "^0.28.15",
+    "@types/react": "^18.0.16",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.4.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "react": "^17.0.1",
+    "semantic-release": "^19.0.3",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4",
+    "vite-aliases": "^0.9.2",
+    "vite-plugin-dts": "^1.4.1"
+  },
+  "dependencies": {}
+}
