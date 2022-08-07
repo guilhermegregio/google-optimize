@@ -1,7 +1,7 @@
 {
   "name": "@gregio/google-optimize",
   "version": "0.0.0-development",
-  "repository": "git@github.com:Creditas/person-classification-frontend-sdk.git",
+  "repository": "git@github.com:guilhermegregio/google-optimize.git",
   "author": "Guilherme Mangabeira Gregio <guilherme.gregio@creditas.com.br>",
   "license": "MIT",
   "scripts": {
