@@ -1,15 +1,21 @@
 name: CI
-on: push
+
+on: [push]
+
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    environment: deploy
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: '16'
+          cache: 'yarn'
+      - run: yarn install
       - run: yarn build
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn semantic-release
